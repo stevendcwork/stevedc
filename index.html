@@ -1130,64 +1130,69 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <div class="card contact-card">
-                <div class="section-header">
-                    <h2>Let's Work <span>Together</span></h2>
-                    <p>Have a project in mind? Need technical support? Looking for admin assistance? Let's discuss how I can help.</p>
+    <div class="container">
+        <div class="card contact-card">
+            <div class="section-header">
+                <h2>Let's Work <span>Together</span></h2>
+                <p>Have a project in mind? Need technical support? Looking for admin assistance? Let's discuss how I can help.</p>
+            </div>
+            
+            <div class="contact-options">
+                <div class="contact-option">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Schedule a Call</h3>
+                    <p>30-minute free consultation to discuss your needs</p>
                 </div>
                 
-                <div class="contact-options">
-                    <div class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <h3>Schedule a Call</h3>
-                        <p>30-minute free consultation to discuss your needs</p>
+                <div class="contact-option">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    
-                    <div class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email Response</h3>
-                        <p>Detailed proposal within 24 hours of your inquiry</p>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Email Address" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Select Service Needed</option>
-                                <option value="development">Web Development</option>
-                                <option value="support">Technical Support</option>
-                                <option value="admin">Administrative Work</option>
-                                <option value="multiple">Multiple Services</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea placeholder="Tell me about your project or needs..." rows="4" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            Send Message <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                    <h3>Email Response</h3>
+                    <p>Detailed proposal within 24 hours of your inquiry</p>
                 </div>
             </div>
+            
+            <!-- FORMSPREE FORM - Replace YOUR_FORM_ID_HERE with your actual Form ID -->
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xkgdbena" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="service" required>
+                            <option value="">Select Service Needed</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Administrative Work">Administrative Work</option>
+                            <option value="Multiple Services">Multiple Services</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tell me about your project or needs..." rows="4" required></textarea>
+                    </div>
+                    
+                    <!-- Hidden fields for better email formatting -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Steven Dela Cruz Website">
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
