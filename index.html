@@ -3,295 +3,929 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Morgan | Freelance Developer & Tech Support</title>
+    <title>Steven Dela Cruz | Freelance Developer & Tech Support</title>
     <link href="/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: 'Inter', sans-serif;
             color: #1a1a1a;
-            background-color: #fafafa;
+            background-color: #ffffff;
             line-height: 1.6;
         }
+        
+        /* Container */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        .code-font {
-            font-family: 'JetBrains Mono', monospace;
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
         }
-        .section-padding {
-            padding: 80px 0;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-        .accent-color {
-            color: #2563eb;
-        }
-        .accent-bg {
-            background-color: #2563eb;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        
+        /* Buttons */
         .btn {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            font-size: 16px;
         }
+        
         .btn-primary {
             background-color: #2563eb;
             color: white;
         }
+        
         .btn-primary:hover {
             background-color: #1d4ed8;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
-        .btn-outline {
-            border: 2px solid #e5e7eb;
+        
+        .btn-secondary {
+            background-color: white;
             color: #4b5563;
-            background: white;
+            border: 2px solid #e5e7eb;
         }
-        .btn-outline:hover {
+        
+        .btn-secondary:hover {
             border-color: #2563eb;
             color: #2563eb;
         }
-        .tag {
-            display: inline-block;
-            padding: 6px 16px;
-            background-color: #f3f4f6;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #4b5563;
+        
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f3f4f6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .tag.accent {
-            background-color: #dbeafe;
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid #f3f4f6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        
+        .logo span {
             color: #2563eb;
         }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #111827;
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
         }
-        .stat-label {
-            color: #6b7280;
-            font-size: 0.875rem;
-            margin-top: 4px;
+        
+        .nav-links a {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 12px;
+        
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #4b5563;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .hero-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+            gap: 60px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-visual {
+            flex: 1;
+        }
+        
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .availability-badge span {
+            width: 8px;
+            height: 8px;
+            background: #2563eb;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 span {
+            color: #2563eb;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #4b5563;
+            margin-bottom: 40px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .client-trust {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .client-avatars {
+            display: flex;
+        }
+        
+        .client-avatars div {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-left: -12px;
+        }
+        
+        .client-avatars div:first-child {
+            margin-left: 0;
+        }
+        
+        .avatar-1 { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .avatar-2 { background: linear-gradient(135deg, #10b981, #059669); }
+        .avatar-3 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        
+        .trust-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .trust-text strong {
+            color: #1a1a1a;
+        }
+        
+        .stars {
+            color: #f59e0b;
+            margin-top: 4px;
+        }
+        
+        /* Terminal Card */
+        .terminal-card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 32px;
             color: white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        .service-icon.dev {
-            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
         }
-        .service-icon.tech {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
         }
-        .service-icon.admin {
-            background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
-        }
-        .process-step {
-            position: relative;
-            padding-left: 32px;
-        }
-        .process-step:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
+        
+        .terminal-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: #2563eb;
         }
-        .testimonial-quote:before {
-            content: '"';
-            font-size: 4rem;
-            color: #d1d5db;
-            position: absolute;
-            left: -20px;
-            top: -20px;
-            font-family: Georgia, serif;
+        
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+        
+        .terminal-label {
+            font-family: 'Courier New', monospace;
+            color: #94a3b8;
+            font-size: 14px;
         }
-        .nav-link {
-            position: relative;
-            padding: 8px 0;
+        
+        .terminal-body {
+            font-family: 'Courier New', monospace;
         }
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #2563eb;
-            transition: width 0.3s ease;
+        
+        .terminal-line {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
         }
-        .nav-link:hover:after {
+        
+        .prompt {
+            color: #10b981;
+            margin-right: 12px;
+        }
+        
+        .command {
+            color: white;
+        }
+        
+        .info { color: #60a5fa; }
+        .success { color: #10b981; }
+        .process { color: #f59e0b; }
+        
+        .terminal-stats {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #334155;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-label {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .stat-value {
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: white;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+        
+        .stat-description {
+            color: #4b5563;
+            font-size: 16px;
+        }
+        
+        /* Services Section */
+        .services {
+            background: #f8fafc;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 40px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+        
+        .section-header h2 span {
+            color: #2563eb;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #4b5563;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .service-card {
+            padding: 40px;
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .icon-dev {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+        
+        .icon-tech {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .icon-admin {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        
+        .service-card p {
+            color: #4b5563;
+            margin-bottom: 24px;
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .tag {
+            padding: 6px 12px;
+            background: #f3f4f6;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+        
+        .tag.highlight {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        
+        .service-link {
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Process Section */
+        .process {
+            background: white;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+        
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #dbeafe;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .process-step p {
+            color: #4b5563;
+            font-size: 15px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: #f8fafc;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .project-card {
+            padding: 40px;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+        
+        .project-tag {
+            padding: 6px 16px;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        
+        .project-card h3 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+        
+        .project-card p {
+            color: #4b5563;
+            margin-bottom: 24px;
+        }
+        
+        .project-result {
+            text-align: right;
+        }
+        
+        .result-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .result-label {
+            color: #4b5563;
+            font-size: 14px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .view-more {
+            text-align: center;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+        
+        .contact-card {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px;
+            text-align: center;
+        }
+        
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin: 40px 0;
+        }
+        
+        .contact-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: #dbeafe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .contact-form {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        input, select, textarea {
             width: 100%;
+            padding: 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
         }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 64px 0 32px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+        
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col a:hover {
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #94a3b8;
+        }
+        
+        .contact-info i {
+            color: #60a5fa;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #475569;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            background: #1d4ed8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                flex-direction: column;
+                gap: 48px;
+            }
+            
+            .services-grid,
+            .process-grid,
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
-            .section-padding {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .projects-grid,
+            .services-grid,
+            .process-grid,
+            .footer-grid,
+            .contact-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
                 padding: 60px 0;
             }
+            
+            .contact-card {
+                padding: 32px;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .container {
-                padding: 0 20px;
+                padding: 0 16px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section-header h2 {
+                font-size: 32px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+            
+            .service-card,
+            .project-card {
+                padding: 24px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="container">
-            <div class="flex justify-between items-center py-5">
-                <a href="#" class="text-xl font-bold">
-                    <span class="gradient-text">Alex Morgan</span>
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-10">
-                    <a href="#services" class="nav-link text-gray-700 hover:text-gray-900">Services</a>
-                    <a href="#process" class="nav-link text-gray-700 hover:text-gray-900">Process</a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-gray-900">Projects</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-gray-900">About</a>
-                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                </div>
-                
-                <button id="menu-btn" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Steven<span>DelaCruz</span></a>
+            
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
             </div>
             
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 py-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="#services" class="py-2 text-gray-700 hover:text-gray-900">Services</a>
-                    <a href="#process" class="py-2 text-gray-700 hover:text-gray-900">Process</a>
-                    <a href="#projects" class="py-2 text-gray-700 hover:text-gray-900">Projects</a>
-                    <a href="#about" class="py-2 text-gray-700 hover:text-gray-900">About</a>
-                    <a href="#contact" class="btn btn-primary mt-4">Get in Touch</a>
-                </div>
-            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="section-padding">
+    <section class="hero">
         <div class="container">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
-                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                        Available for new projects
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                        I build & maintain digital solutions that
-                        <span class="gradient-text">just work</span>
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8">
-                        Freelance developer, tech support specialist, and operations expert helping businesses streamline their digital workflows.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="btn btn-primary">
-                            Start a Project
-                        </a>
-                        <a href="#projects" class="btn btn-outline">
-                            View My Work
-                        </a>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="availability-badge">
+                        <span></span> Available for new projects
                     </div>
                     
-                    <div class="flex items-center mt-12">
-                        <div class="flex -space-x-3 mr-6">
-                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-r from-blue-400 to-blue-600"></div>
-                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-r from-green-400 to-green-600"></div>
-                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-r from-purple-400 to-purple-600"></div>
+                    <h1>I build & maintain digital solutions that <span>just work</span></h1>
+                    
+                    <p>Freelance developer, tech support specialist, and operations expert helping businesses streamline their digital workflows.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Start a Project</a>
+                        <a href="#projects" class="btn btn-secondary">View My Work</a>
+                    </div>
+                    
+                    <div class="client-trust">
+                        <div class="client-avatars">
+                            <div class="avatar-1"></div>
+                            <div class="avatar-2"></div>
+                            <div class="avatar-3"></div>
                         </div>
-                        <div>
-                            <p class="font-medium text-gray-900">Trusted by 50+ clients worldwide</p>
-                            <div class="flex items-center text-amber-500">
-                                <i class="fas fa-star text-sm"></i>
-                                <i class="fas fa-star text-sm"></i>
-                                <i class="fas fa-star text-sm"></i>
-                                <i class="fas fa-star text-sm"></i>
-                                <i class="fas fa-star text-sm"></i>
-                                <span class="text-gray-600 ml-2 text-sm">4.9/5 (47 reviews)</span>
+                        <div class="trust-text">
+                            <strong>Trusted by 50+ clients worldwide</strong>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span style="color: #6b7280; margin-left: 8px;">4.9/5 (47 reviews)</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2 lg:pl-16">
-                    <div class="card p-1">
-                        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8">
-                            <div class="flex items-center justify-between mb-8">
-                                <div class="flex items-center">
-                                    <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                                    <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                </div>
-                                <div class="text-gray-400 code-font text-sm">terminal — bash</div>
+                <div class="hero-visual">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
                             </div>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <span class="text-green-400 code-font mr-4">$</span>
-                                    <span class="text-white code-font">npm run start-project</span>
-                                </div>
-                                <div class="text-gray-300 code-font text-sm">
-                                    <span class="text-blue-400">[INFO]</span> Initializing project...
-                                </div>
-                                <div class="text-gray-300 code-font text-sm">
-                                    <span class="text-green-400">[SUCCESS]</span> Client requirements loaded
-                                </div>
-                                <div class="text-gray-300 code-font text-sm">
-                                    <span class="text-green-400">[SUCCESS]</span> Tech stack configured
-                                </div>
-                                <div class="text-gray-300 code-font text-sm">
-                                    <span class="text-amber-400">[PROCESS]</span> Development in progress...
-                                </div>
-                                <div class="mt-6 pt-6 border-t border-gray-700">
-                                    <div class="flex justify-between text-sm">
-                                        <div>
-                                            <div class="text-gray-400">Current Status</div>
-                                            <div class="text-white font-medium">Available for new projects</div>
-                                        </div>
-                                        <div>
-                                            <div class="text-gray-400">Response Time</div>
-                                            <div class="text-white font-medium">Within 24 hours</div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="terminal-label">terminal — bash</div>
+                        </div>
+                        
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">npm run start-project</span>
+                            </div>
+                            <div class="info">[INFO] Initializing project...</div>
+                            <div class="success">[SUCCESS] Client requirements loaded</div>
+                            <div class="success">[SUCCESS] Tech stack configured</div>
+                            <div class="process">[PROCESS] Development in progress...</div>
+                        </div>
+                        
+                        <div class="terminal-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Current Status</div>
+                                <div class="stat-value">Available for new projects</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Response Time</div>
+                                <div class="stat-value">Within 24 hours</div>
                             </div>
                         </div>
                     </div>
@@ -300,458 +934,344 @@
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="bg-white border-y border-gray-100">
+    <!-- Stats Section -->
+    <section class="stats">
         <div class="container">
-            <div class="py-12">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="stat-number">2.5k+</div>
-                        <div class="stat-label">Support Tickets Resolved</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">On-Time Delivery</div>
-                    </div>
+            <div class="stats-container">
+                <div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-description">Projects Completed</div>
+                </div>
+                <div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-description">Client Satisfaction</div>
+                </div>
+                <div>
+                    <div class="stat-number">2.5k+</div>
+                    <div class="stat-description">Support Tickets Resolved</div>
+                </div>
+                <div>
+                    <div class="stat-number">98%</div>
+                    <div class="stat-description">On-Time Delivery</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="section-padding">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Comprehensive <span class="gradient-text">Digital Solutions</span>
-                </h2>
-                <p class="text-gray-600">
-                    From development to ongoing support and administration, I provide end-to-end solutions for your digital needs.
-                </p>
+            <div class="section-header">
+                <h2>Comprehensive <span>Digital Solutions</span></h2>
+                <p>From development to ongoing support and administration, I provide end-to-end solutions for your digital needs.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1: Development -->
-                <div class="card p-8">
-                    <div class="service-icon dev">
-                        <i class="fas fa-code text-xl"></i>
+            <div class="services-grid">
+                <!-- Service 1: Web Development -->
+                <div class="card service-card">
+                    <div class="service-icon icon-dev">
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
-                    <p class="text-gray-600 mb-6">
-                        Clean, responsive websites and web applications built with modern technologies. Focus on performance, SEO, and user experience.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
+                    <h3>Web Development</h3>
+                    <p>Clean, responsive websites and web applications built with modern technologies. Focus on performance, SEO, and user experience.</p>
+                    
+                    <div class="service-tags">
                         <span class="tag">HTML/CSS/JS</span>
                         <span class="tag">React</span>
                         <span class="tag">Node.js</span>
-                        <span class="tag accent">WordPress</span>
+                        <span class="tag highlight">WordPress</span>
                     </div>
-                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
-                        Discuss a project <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    
+                    <a href="#contact" class="service-link">
+                        Discuss a project <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 
-                <!-- Service 2: Tech Support -->
-                <div class="card p-8">
-                    <div class="service-icon tech">
-                        <i class="fas fa-headset text-xl"></i>
+                <!-- Service 2: Technical Support -->
+                <div class="card service-card">
+                    <div class="service-icon icon-tech">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Technical Support</h3>
-                    <p class="text-gray-600 mb-6">
-                        Reliable troubleshooting, maintenance, and technical guidance. Quick resolution of issues to keep your operations running smoothly.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
+                    <h3>Technical Support</h3>
+                    <p>Reliable troubleshooting, maintenance, and technical guidance. Quick resolution of issues to keep your operations running smoothly.</p>
+                    
+                    <div class="service-tags">
                         <span class="tag">Website Maintenance</span>
                         <span class="tag">Bug Fixes</span>
                         <span class="tag">Performance Optimization</span>
-                        <span class="tag accent">24/7 Support</span>
+                        <span class="tag highlight">24/7 Support</span>
                     </div>
-                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
-                        Get support <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    
+                    <a href="#contact" class="service-link">
+                        Get support <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 
-                <!-- Service 3: Admin Work -->
-                <div class="card p-8">
-                    <div class="service-icon admin">
-                        <i class="fas fa-tasks text-xl"></i>
+                <!-- Service 3: Administrative Work -->
+                <div class="card service-card">
+                    <div class="service-icon icon-admin">
+                        <i class="fas fa-tasks"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Administrative Work</h3>
-                    <p class="text-gray-600 mb-6">
-                        Streamline your operations with data entry, documentation, email management, and process optimization services.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
+                    <h3>Administrative Work</h3>
+                    <p>Streamline your operations with data entry, documentation, email management, and process optimization services.</p>
+                    
+                    <div class="service-tags">
                         <span class="tag">Data Entry</span>
                         <span class="tag">Documentation</span>
                         <span class="tag">Email Management</span>
-                        <span class="tag accent">Process Automation</span>
+                        <span class="tag highlight">Process Automation</span>
                     </div>
-                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
-                        Optimize workflow <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    
+                    <a href="#contact" class="service-link">
+                        Optimize workflow <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process -->
-    <section id="process" class="section-padding bg-gray-50">
+    <!-- Process Section -->
+    <section id="process" class="process">
         <div class="container">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Simple, Effective <span class="gradient-text">Process</span>
-                </h2>
-                <p class="text-gray-600">
-                    Clear steps from initial consultation to project delivery and ongoing support.
-                </p>
+            <div class="section-header">
+                <h2>Simple, Effective <span>Process</span></h2>
+                <p>Clear steps from initial consultation to project delivery and ongoing support.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-blue-600 font-bold text-xl">1</span>
-                    </div>
-                    <h3 class="font-bold mb-3">Consultation</h3>
-                    <p class="text-gray-600 text-sm">
-                        We discuss your requirements, goals, and timeline in detail.
-                    </p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your requirements, goals, and timeline in detail.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-blue-600 font-bold text-xl">2</span>
-                    </div>
-                    <h3 class="font-bold mb-3">Proposal & Plan</h3>
-                    <p class="text-gray-600 text-sm">
-                        I provide a detailed plan with timeline, cost, and deliverables.
-                    </p>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Proposal & Plan</h3>
+                    <p>I provide a detailed plan with timeline, cost, and deliverables.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-blue-600 font-bold text-xl">3</span>
-                    </div>
-                    <h3 class="font-bold mb-3">Development & Updates</h3>
-                    <p class="text-gray-600 text-sm">
-                        Regular progress updates and opportunities for feedback.
-                    </p>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Development & Updates</h3>
+                    <p>Regular progress updates and opportunities for feedback.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-blue-600 font-bold text-xl">4</span>
-                    </div>
-                    <h3 class="font-bold mb-3">Delivery & Support</h3>
-                    <p class="text-gray-600 text-sm">
-                        Project delivery, training, and ongoing support options.
-                    </p>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Delivery & Support</h3>
+                    <p>Project delivery, training, and ongoing support options.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section-padding">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Recent <span class="gradient-text">Projects</span>
-                </h2>
-                <p class="text-gray-600">
-                    A selection of completed work across development, support, and administration.
-                </p>
+            <div class="section-header">
+                <h2>Recent <span>Projects</span></h2>
+                <p>A selection of completed work across development, support, and administration.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="card overflow-hidden">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="tag accent mb-3">Web Development</span>
-                                <h3 class="text-xl font-bold">E-commerce Platform Redesign</h3>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-gray-900 font-bold">+40%</div>
-                                <div class="text-gray-500 text-sm">Conversion Rate</div>
-                            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="card project-card">
+                    <div class="project-header">
+                        <div>
+                            <span class="project-tag">Web Development</span>
+                            <h3>E-commerce Platform Redesign</h3>
                         </div>
-                        <p class="text-gray-600 mb-6">
-                            Complete redesign of an online store with improved UX, faster loading times, and mobile optimization.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
+                        <div class="project-result">
+                            <div class="result-number">+40%</div>
+                            <div class="result-label">Conversion Rate</div>
                         </div>
+                    </div>
+                    
+                    <p>Complete redesign of an online store with improved UX, faster loading times, and mobile optimization.</p>
+                    
+                    <div class="project-tech">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
                     </div>
                 </div>
                 
-                <div class="card overflow-hidden">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="tag accent mb-3">Tech Support</span>
-                                <h3 class="text-xl font-bold">Website Migration & Maintenance</h3>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-gray-900 font-bold">99.9%</div>
-                                <div class="text-gray-500 text-sm">Uptime</div>
-                            </div>
+                <!-- Project 2 -->
+                <div class="card project-card">
+                    <div class="project-header">
+                        <div>
+                            <span class="project-tag">Tech Support</span>
+                            <h3>Website Migration & Maintenance</h3>
                         </div>
-                        <p class="text-gray-600 mb-6">
-                            Seamless migration to new hosting with ongoing maintenance, security updates, and performance monitoring.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Security</span>
-                            <span class="tag">Backup Solutions</span>
+                        <div class="project-result">
+                            <div class="result-number">99.9%</div>
+                            <div class="result-label">Uptime</div>
                         </div>
+                    </div>
+                    
+                    <p>Seamless migration to new hosting with ongoing maintenance, security updates, and performance monitoring.</p>
+                    
+                    <div class="project-tech">
+                        <span class="tag">WordPress</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Backup Solutions</span>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center">
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-briefcase mr-2"></i> View All Projects
+            <div class="view-more">
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-briefcase"></i> View All Projects
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section-padding bg-gray-50">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Client <span class="gradient-text">Feedback</span>
-                </h2>
-                <p class="text-gray-600">
-                    What clients say about working together.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 mr-4"></div>
-                        <div>
-                            <h4 class="font-bold">Michael Chen</h4>
-                            <p class="text-gray-500 text-sm">Startup Founder</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic relative testimonial-quote pl-4">
-                        Alex delivered exactly what was promised, on time and within budget. The technical support has been exceptional.
-                    </p>
+            <div class="card contact-card">
+                <div class="section-header">
+                    <h2>Let's Work <span>Together</span></h2>
+                    <p>Have a project in mind? Need technical support? Looking for admin assistance? Let's discuss how I can help.</p>
                 </div>
                 
-                <div class="card p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-green-600 mr-4"></div>
-                        <div>
-                            <h4 class="font-bold">Sarah Johnson</h4>
-                            <p class="text-gray-500 text-sm">Marketing Director</p>
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-check"></i>
                         </div>
+                        <h3>Schedule a Call</h3>
+                        <p>30-minute free consultation to discuss your needs</p>
                     </div>
-                    <p class="text-gray-600 italic relative testimonial-quote pl-4">
-                        Professional, reliable, and incredibly skilled. Handles both development and admin work with equal expertise.
-                    </p>
-                </div>
-                
-                <div class="card p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 mr-4"></div>
-                        <div>
-                            <h4 class="font-bold">David Park</h4>
-                            <p class="text-gray-500 text-sm">Small Business Owner</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic relative testimonial-quote pl-4">
-                        The website revamp exceeded expectations, and ongoing support has been invaluable for our growing business.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="max-w-3xl mx-auto">
-                <div class="card p-12 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                        Let's Work <span class="gradient-text">Together</span>
-                    </h2>
-                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Have a project in mind? Need technical support? Looking for admin assistance? Let's discuss how I can help.
-                    </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                    <div class="contact-option">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Response</h3>
+                        <p>Detailed proposal within 24 hours of your inquiry</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
                             </div>
-                            <h4 class="font-bold mb-2">Schedule a Call</h4>
-                            <p class="text-gray-600 text-sm">
-                                30-minute free consultation to discuss your needs
-                            </p>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
                         </div>
                         
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">Email Response</h4>
-                            <p class="text-gray-600 text-sm">
-                                Detailed proposal within 24 hours of your inquiry
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="max-w-md mx-auto">
-                        <form id="contact-form" class="space-y-4">
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <input type="text" placeholder="Your Name" class="flex-1 p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
-                                <input type="email" placeholder="Email Address" class="flex-1 p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
-                            </div>
-                            <select class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                        <div class="form-group">
+                            <select required>
                                 <option value="">Select Service Needed</option>
                                 <option value="development">Web Development</option>
                                 <option value="support">Technical Support</option>
                                 <option value="admin">Administrative Work</option>
                                 <option value="multiple">Multiple Services</option>
                             </select>
-                            <textarea placeholder="Tell me about your project or needs..." rows="4" class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
-                            <button type="submit" class="btn btn-primary w-full">
-                                Send Message <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </form>
-                    </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea placeholder="Tell me about your project or needs..." rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer>
         <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="footer-grid">
                 <div>
-                    <div class="text-xl font-bold mb-6">
-                        <span class="text-white">Alex</span><span class="text-blue-400">Morgan</span>
+                    <div style="font-size: 24px; font-weight: 700; margin-bottom: 20px;">
+                        Steven<span style="color: #60a5fa;">DelaCruz</span>
                     </div>
-                    <p class="text-gray-400 mb-6">
-                        Freelance developer, tech support specialist, and operations expert.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700">
+                    <p style="color: #94a3b8; margin-bottom: 24px;">Freelance developer, tech support specialist, and operations expert.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600">
+                        <a href="#" class="social-link">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700">
+                        <a href="#" class="social-link">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-6">Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Web Development</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Technical Support</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Administrative Work</a></li>
-                        <li><a href="#process" class="text-gray-400 hover:text-white">Consultation</a></li>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Technical Support</a></li>
+                        <li><a href="#services">Administrative Work</a></li>
+                        <li><a href="#process">Consultation</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#process" class="text-gray-400 hover:text-white">Process</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-white">Projects</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-6">Contact Info</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
-                            hello@alexmorgan.dev
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            hello@stevendelacruz.dev
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
                             Available Worldwide
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-clock mr-3 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock"></i>
                             Mon-Fri, 9am-6pm EST
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-10 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Alex Morgan. All rights reserved.</p>
-                <p class="mt-2 text-sm">Built with precision and care for every client.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Steven Dela Cruz. All rights reserved.</p>
+                <p style="margin-top: 8px;">Built with precision and care for every client.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Action Button -->
-    <a href="#contact" class="fixed bottom-6 right-6 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition-all hover:scale-110">
+    <!-- Floating Contact Button -->
+    <a href="#contact" class="floating-btn">
         <i class="fas fa-comment-alt"></i>
     </a>
 
     <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobile-menu');
-            const btn = document.getElementById('menu-btn');
-            if (!menu.contains(event.target) && !btn.contains(event.target) && !menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.getElementById('mobile-menu').classList.add('hidden');
-                }
-            });
-        });
-
-        // Form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
@@ -759,42 +1279,43 @@
             const email = this.querySelector('input[type="email"]').value;
             
             if (name && email) {
-                // Show success message
-                alert(`Thanks ${name}! I've received your message and will get back to you at ${email} within 24 hours.`);
-                
-                // Reset form
+                alert(`Thank you ${name}! I've received your message and will get back to you at ${email} within 24 hours.`);
                 this.reset();
-                
-                // Scroll to top
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
             } else {
                 alert('Please fill in your name and email address.');
             }
         });
 
-        // Add active class to nav links on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const navLinks = document.querySelector('.nav-links');
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-600');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('text-blue-600');
-                }
-            });
+        });
+
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.querySelector('.footer-bottom p');
+            if (yearSpan) {
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2023', new Date().getFullYear());
+            }
         });
     </script>
 </body>
