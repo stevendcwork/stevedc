@@ -578,72 +578,39 @@
         }
         
         /* Contact Section */
-        .contact {
-            background: white;
-        }
+<div class="contact-form">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="_replyto" placeholder="Email Address" required>
+            </div>
+        </div>
         
-        .contact-card {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 64px;
-            text-align: center;
-        }
+        <div class="form-group">
+            <select name="service" required>
+                <option value="">Select Service Needed</option>
+                <option value="development">Web Development</option>
+                <option value="support">Technical Support</option>
+                <option value="admin">Administrative Work</option>
+                <option value="multiple">Multiple Services</option>
+            </select>
+        </div>
         
-        .contact-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin: 40px 0;
-        }
+        <div class="form-group">
+            <textarea name="message" placeholder="Tell me about your project or needs..." rows="4" required></textarea>
+        </div>
         
-        .contact-option {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        <!-- Optional: Add hidden field to redirect after submission -->
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
         
-        .contact-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: #dbeafe;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2563eb;
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-        
-        .contact-form {
-            max-width: 480px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 16px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #2563eb;
-        }
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Message <i class="fas fa-paper-plane"></i>
+        </button>
+    </form>
+</div>
         
         /* Footer */
         footer {
