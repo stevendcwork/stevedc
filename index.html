@@ -3,497 +3,716 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevate Your Business | [Your Company Name]</title>
+    <title>Alex Morgan | Freelance Developer & Tech Support</title>
     <link href="/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            background-color: #fafafa;
+            line-height: 1.6;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
-        .hover-lift {
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .hover-lift:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
-        .stat-number {
-            font-size: 3.5rem;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        .accent-color {
+            color: #2563eb;
+        }
+        .accent-bg {
+            background-color: #2563eb;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 800;
         }
-        .testimonial-card {
-            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .btn-outline {
+            border: 2px solid #e5e7eb;
+            color: #4b5563;
+            background: white;
+        }
+        .btn-outline:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+        .tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: #f3f4f6;
             border-radius: 20px;
-            box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #4b5563;
         }
-        .cta-gradient {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            background-size: 200% auto;
-            animation: gradient 3s linear infinite;
+        .tag.accent {
+            background-color: #dbeafe;
+            color: #2563eb;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
         }
-        .floating {
-            animation: float 6s ease-in-out infinite;
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-top: 4px;
         }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
         }
-        .pulse {
-            animation: pulse 2s infinite;
+        .service-icon.dev {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .service-icon.tech {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+        .service-icon.admin {
+            background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+        }
+        .process-step {
+            position: relative;
+            padding-left: 32px;
+        }
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #2563eb;
+        }
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 4rem;
+            color: #d1d5db;
+            position: absolute;
+            left: -20px;
+            top: -20px;
+            font-family: Georgia, serif;
+        }
+        .nav-link {
+            position: relative;
+            padding: 8px 0;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            .container {
+                padding: 0 20px;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Announcement Bar -->
-    <div class="gradient-bg text-white py-2 text-center">
-        <div class="container mx-auto px-4">
-            <p class="font-semibold">🎉 Limited Time Offer: Get 30% Off Your First Project! <a href="#contact" class="underline font-bold ml-2">Claim Now →</a></p>
-        </div>
-    </div>
-
+<body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <div class="gradient-bg w-10 h-10 rounded-lg flex items-center justify-center mr-3">
-                        <span class="text-white font-bold text-xl">E</span>
-                    </div>
-                    <span class="text-2xl font-bold text-gray-900">Elevate<span class="gradient-text">Co</span></span>
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="container">
+            <div class="flex justify-between items-center py-5">
+                <a href="#" class="text-xl font-bold">
+                    <span class="gradient-text">Alex Morgan</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#services" class="nav-link text-gray-700 hover:text-gray-900">Services</a>
+                    <a href="#process" class="nav-link text-gray-700 hover:text-gray-900">Process</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-gray-900">Projects</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-gray-900">About</a>
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
                 </div>
                 
-                <div class="hidden lg:flex items-center space-x-10">
-                    <a href="#home" class="text-gray-700 hover:text-purple-600 font-medium">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-purple-600 font-medium">Services</a>
-                    <a href="#results" class="text-gray-700 hover:text-purple-600 font-medium">Results</a>
-                    <a href="#testimonials" class="text-gray-700 hover:text-purple-600 font-medium">Testimonials</a>
-                    <a href="#pricing" class="text-gray-700 hover:text-purple-600 font-medium">Pricing</a>
-                    <a href="#contact" class="gradient-bg text-white px-6 py-3 rounded-full font-semibold hover-lift">Book a Call</a>
-                </div>
-                
-                <button id="menu-btn" class="lg:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button id="menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="lg:hidden mt-4 hidden bg-white rounded-lg shadow-xl p-6">
-                <div class="space-y-4">
-                    <a href="#home" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Home</a>
-                    <a href="#services" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Services</a>
-                    <a href="#results" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Results</a>
-                    <a href="#testimonials" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Testimonials</a>
-                    <a href="#pricing" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Pricing</a>
-                    <a href="#contact" class="gradient-bg text-white px-6 py-3 rounded-full font-semibold block text-center mt-4">Book a Call</a>
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#services" class="py-2 text-gray-700 hover:text-gray-900">Services</a>
+                    <a href="#process" class="py-2 text-gray-700 hover:text-gray-900">Process</a>
+                    <a href="#projects" class="py-2 text-gray-700 hover:text-gray-900">Projects</a>
+                    <a href="#about" class="py-2 text-gray-700 hover:text-gray-900">About</a>
+                    <a href="#contact" class="btn btn-primary mt-4">Get in Touch</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative overflow-hidden py-20 md:py-32">
-        <div class="container mx-auto px-6 relative z-10">
+    <section class="section-padding">
+        <div class="container">
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <div class="inline-block px-4 py-2 rounded-full bg-purple-100 text-purple-700 font-semibold mb-6">
-                        🚀 Trusted by 500+ Businesses
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Available for new projects
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                        Transform Your <span class="gradient-text">Business</span> With <span class="gradient-text">Results</span> That Matter
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        I build & maintain digital solutions that
+                        <span class="gradient-text">just work</span>
                     </h1>
                     <p class="text-xl text-gray-600 mb-8">
-                        We don't just build websites—we create digital experiences that convert visitors into customers and drive real revenue growth.
+                        Freelance developer, tech support specialist, and operations expert helping businesses streamline their digital workflows.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="gradient-bg text-white px-8 py-4 rounded-full font-bold text-lg hover-lift pulse text-center">
-                            Get Your Free Strategy Session →
+                        <a href="#contact" class="btn btn-primary">
+                            Start a Project
                         </a>
-                        <a href="#results" class="bg-white text-gray-800 px-8 py-4 rounded-full font-bold text-lg border-2 border-gray-200 hover:border-purple-500 hover-lift text-center">
-                            View Case Studies
+                        <a href="#projects" class="btn btn-outline">
+                            View My Work
                         </a>
                     </div>
-                    <div class="mt-12 flex items-center">
-                        <div class="flex -space-x-4 mr-4">
-                            <div class="w-12 h-12 rounded-full border-2 border-white gradient-bg"></div>
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-pink-500"></div>
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-blue-500"></div>
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-yellow-500 flex items-center justify-center">
-                                <span class="text-white font-bold">+47</span>
-                            </div>
+                    
+                    <div class="flex items-center mt-12">
+                        <div class="flex -space-x-3 mr-6">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-r from-green-400 to-green-600"></div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-r from-purple-400 to-purple-600"></div>
                         </div>
                         <div>
-                            <p class="font-semibold text-gray-900">Join 500+ satisfied clients</p>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="text-gray-600 ml-2">5.0 (247 reviews)</span>
+                            <p class="font-medium text-gray-900">Trusted by 50+ clients worldwide</p>
+                            <div class="flex items-center text-amber-500">
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <i class="fas fa-star text-sm"></i>
+                                <span class="text-gray-600 ml-2 text-sm">4.9/5 (47 reviews)</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2 relative">
-                    <div class="relative floating">
-                        <div class="gradient-bg rounded-3xl p-1 shadow-2xl">
-                            <div class="bg-white rounded-3xl p-8">
-                                <div class="flex justify-between items-center mb-6">
-                                    <div class="flex items-center">
-                                        <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                                        <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-                                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                    </div>
-                                    <div class="text-sm text-gray-500">www.yourbusiness.com</div>
+                
+                <div class="lg:w-1/2 lg:pl-16">
+                    <div class="card p-1">
+                        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8">
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
                                 </div>
-                                <div class="text-center">
-                                    <div class="text-6xl mb-4">📈</div>
-                                    <h3 class="text-2xl font-bold mb-2">Revenue Growth Dashboard</h3>
-                                    <p class="text-gray-600 mb-6">See real results like our clients</p>
-                                    <div class="grid grid-cols-2 gap-4 mb-6">
-                                        <div class="bg-purple-50 p-4 rounded-xl">
-                                            <div class="stat-number">+245%</div>
-                                            <p class="text-gray-600">Traffic Increase</p>
+                                <div class="text-gray-400 code-font text-sm">terminal — bash</div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="text-green-400 code-font mr-4">$</span>
+                                    <span class="text-white code-font">npm run start-project</span>
+                                </div>
+                                <div class="text-gray-300 code-font text-sm">
+                                    <span class="text-blue-400">[INFO]</span> Initializing project...
+                                </div>
+                                <div class="text-gray-300 code-font text-sm">
+                                    <span class="text-green-400">[SUCCESS]</span> Client requirements loaded
+                                </div>
+                                <div class="text-gray-300 code-font text-sm">
+                                    <span class="text-green-400">[SUCCESS]</span> Tech stack configured
+                                </div>
+                                <div class="text-gray-300 code-font text-sm">
+                                    <span class="text-amber-400">[PROCESS]</span> Development in progress...
+                                </div>
+                                <div class="mt-6 pt-6 border-t border-gray-700">
+                                    <div class="flex justify-between text-sm">
+                                        <div>
+                                            <div class="text-gray-400">Current Status</div>
+                                            <div class="text-white font-medium">Available for new projects</div>
                                         </div>
-                                        <div class="bg-blue-50 p-4 rounded-xl">
-                                            <div class="stat-number">+167%</div>
-                                            <p class="text-gray-600">Conversion Rate</p>
+                                        <div>
+                                            <div class="text-gray-400">Response Time</div>
+                                            <div class="text-white font-medium">Within 24 hours</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Floating Elements -->
-                    <div class="absolute -top-6 -right-6 w-24 h-24 gradient-bg rounded-2xl -z-10 floating" style="animation-delay: 1s;"></div>
-                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-pink-500 rounded-2xl -z-10 floating" style="animation-delay: 2s;"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="stat-number">500+</div>
-                    <p class="text-gray-600 font-medium">Happy Clients</p>
-                </div>
-                <div>
-                    <div class="stat-number">$15M+</div>
-                    <p class="text-gray-600 font-medium">Revenue Generated</p>
-                </div>
-                <div>
-                    <div class="stat-number">98%</div>
-                    <p class="text-gray-600 font-medium">Client Retention</p>
-                </div>
-                <div>
-                    <div class="stat-number">24/7</div>
-                    <p class="text-gray-600 font-medium">Support</p>
+    <!-- Stats -->
+    <section class="bg-white border-y border-gray-100">
+        <div class="container">
+            <div class="py-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-number">2.5k+</div>
+                        <div class="stat-label">Support Tickets Resolved</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">On-Time Delivery</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Our <span class="gradient-text">Premium</span> Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We deliver comprehensive solutions that drive measurable business growth</p>
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Comprehensive <span class="gradient-text">Digital Solutions</span>
+                </h2>
+                <p class="text-gray-600">
+                    From development to ongoing support and administration, I provide end-to-end solutions for your digital needs.
+                </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="gradient-bg w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-rocket text-white text-2xl"></i>
+                <!-- Service 1: Development -->
+                <div class="card p-8">
+                    <div class="service-icon dev">
+                        <i class="fas fa-code text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Growth-Focused Web Design</h3>
-                    <p class="text-gray-600 mb-6">Beautiful, high-converting websites designed to turn visitors into paying customers.</p>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Conversion-Optimized Design</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Mobile-First Approach</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> SEO-Ready Structure</li>
-                    </ul>
-                    <a href="#" class="text-purple-600 font-semibold">Learn More →</a>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-600 mb-6">
+                        Clean, responsive websites and web applications built with modern technologies. Focus on performance, SEO, and user experience.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag">HTML/CSS/JS</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag accent">WordPress</span>
+                    </div>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Discuss a project <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="gradient-bg w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <!-- Service 2: Tech Support -->
+                <div class="card p-8">
+                    <div class="service-icon tech">
+                        <i class="fas fa-headset text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Digital Marketing Mastery</h3>
-                    <p class="text-gray-600 mb-6">Data-driven marketing strategies that deliver real ROI and sustainable growth.</p>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> ROI-Focused Campaigns</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Social Media Strategy</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Content Marketing</li>
-                    </ul>
-                    <a href="#" class="text-purple-600 font-semibold">Learn More →</a>
+                    <h3 class="text-xl font-bold mb-4">Technical Support</h3>
+                    <p class="text-gray-600 mb-6">
+                        Reliable troubleshooting, maintenance, and technical guidance. Quick resolution of issues to keep your operations running smoothly.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag">Website Maintenance</span>
+                        <span class="tag">Bug Fixes</span>
+                        <span class="tag">Performance Optimization</span>
+                        <span class="tag accent">24/7 Support</span>
+                    </div>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Get support <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="gradient-bg w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
+                <!-- Service 3: Admin Work -->
+                <div class="card p-8">
+                    <div class="service-icon admin">
+                        <i class="fas fa-tasks text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Business Automation</h3>
-                    <p class="text-gray-600 mb-6">Streamline operations and boost efficiency with smart automation solutions.</p>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Workflow Automation</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> CRM Integration</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> AI-Powered Tools</li>
-                    </ul>
-                    <a href="#" class="text-purple-600 font-semibold">Learn More →</a>
+                    <h3 class="text-xl font-bold mb-4">Administrative Work</h3>
+                    <p class="text-gray-600 mb-6">
+                        Streamline your operations with data entry, documentation, email management, and process optimization services.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag">Data Entry</span>
+                        <span class="tag">Documentation</span>
+                        <span class="tag">Email Management</span>
+                        <span class="tag accent">Process Automation</span>
+                    </div>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Optimize workflow <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Results Section -->
-    <section id="results" class="py-20 bg-gray-900 text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Real <span class="text-purple-400">Results</span>, Real Impact</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">See how we've transformed businesses across industries</p>
+    <!-- Process -->
+    <section id="process" class="section-padding bg-gray-50">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Simple, Effective <span class="gradient-text">Process</span>
+                </h2>
+                <p class="text-gray-600">
+                    Clear steps from initial consultation to project delivery and ongoing support.
+                </p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="bg-gray-800 p-8 rounded-2xl mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-blue-600 font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="font-bold mb-3">Consultation</h3>
+                    <p class="text-gray-600 text-sm">
+                        We discuss your requirements, goals, and timeline in detail.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-blue-600 font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="font-bold mb-3">Proposal & Plan</h3>
+                    <p class="text-gray-600 text-sm">
+                        I provide a detailed plan with timeline, cost, and deliverables.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-blue-600 font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="font-bold mb-3">Development & Updates</h3>
+                    <p class="text-gray-600 text-sm">
+                        Regular progress updates and opportunities for feedback.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-blue-600 font-bold text-xl">4</span>
+                    </div>
+                    <h3 class="font-bold mb-3">Delivery & Support</h3>
+                    <p class="text-gray-600 text-sm">
+                        Project delivery, training, and ongoing support options.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Recent <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="text-gray-600">
+                    A selection of completed work across development, support, and administration.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="card overflow-hidden">
+                    <div class="p-8">
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <h3 class="text-2xl font-bold mb-2">E-commerce Store Transformation</h3>
-                                <div class="flex text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
+                                <span class="tag accent mb-3">Web Development</span>
+                                <h3 class="text-xl font-bold">E-commerce Platform Redesign</h3>
                             </div>
                             <div class="text-right">
-                                <div class="text-3xl font-bold text-green-400">+327%</div>
-                                <div class="text-gray-400">Revenue Growth</div>
+                                <div class="text-gray-900 font-bold">+40%</div>
+                                <div class="text-gray-500 text-sm">Conversion Rate</div>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-6">"Within 3 months, they completely transformed our online store. The results speak for themselves!"</p>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full gradient-bg mr-4"></div>
-                            <div>
-                                <p class="font-bold">Sarah Johnson</p>
-                                <p class="text-gray-400">CEO, StyleBoutique</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-3 gap-4 text-center">
-                        <div class="bg-gray-800 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-purple-400">+89%</div>
-                            <div class="text-gray-400">Conversion Rate</div>
-                        </div>
-                        <div class="bg-gray-800 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-blue-400">+156%</div>
-                            <div class="text-gray-400">Organic Traffic</div>
-                        </div>
-                        <div class="bg-gray-800 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-green-400">-45%</div>
-                            <div class="text-gray-400">Bounce Rate</div>
+                        <p class="text-gray-600 mb-6">
+                            Complete redesign of an online store with improved UX, faster loading times, and mobile optimization.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
                         </div>
                     </div>
                 </div>
                 
-                <div>
-                    <div class="relative">
-                        <div class="bg-gradient-to-br from-purple-600 to-pink-600 p-1 rounded-2xl">
-                            <div class="bg-gray-900 p-8 rounded-2xl">
-                                <h3 class="text-2xl font-bold mb-6">Ready for Your Success Story?</h3>
-                                <p class="text-gray-300 mb-8">Book a free strategy session and discover how we can help you achieve similar results.</p>
-                                <a href="#contact" class="cta-gradient text-white px-8 py-4 rounded-full font-bold text-lg hover-lift block text-center">
-                                    Schedule Free Consultation
-                                </a>
+                <div class="card overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="tag accent mb-3">Tech Support</span>
+                                <h3 class="text-xl font-bold">Website Migration & Maintenance</h3>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-gray-900 font-bold">99.9%</div>
+                                <div class="text-gray-500 text-sm">Uptime</div>
                             </div>
                         </div>
-                        <div class="absolute -top-6 -right-6 w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center floating">
-                            <i class="fas fa-trophy text-2xl"></i>
+                        <p class="text-gray-600 mb-6">
+                            Seamless migration to new hosting with ongoing maintenance, security updates, and performance monitoring.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Backup Solutions</span>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-briefcase mr-2"></i> View All Projects
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">What Our <span class="gradient-text">Clients</span> Say</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it—hear from businesses we've transformed</p>
+    <section class="section-padding bg-gray-50">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Client <span class="gradient-text">Feedback</span>
+                </h2>
+                <p class="text-gray-600">
+                    What clients say about working together.
+                </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="testimonial-card p-8 rounded-2xl">
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-quote-right text-3xl"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">"Working with ElevateCo was the best business decision we made. Our revenue tripled in just 6 months!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-blue-500 mr-4"></div>
+                <div class="card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 mr-4"></div>
                         <div>
-                            <p class="font-bold">Michael Chen</p>
-                            <p class="text-gray-600">Founder, TechSolutions</p>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">Startup Founder</p>
                         </div>
                     </div>
+                    <p class="text-gray-600 italic relative testimonial-quote pl-4">
+                        Alex delivered exactly what was promised, on time and within budget. The technical support has been exceptional.
+                    </p>
                 </div>
                 
-                <div class="testimonial-card p-8 rounded-2xl">
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-quote-right text-3xl"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">"The team exceeded all expectations. Professional, creative, and results-driven. Highly recommended!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-purple-500 mr-4"></div>
+                <div class="card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-green-600 mr-4"></div>
                         <div>
-                            <p class="font-bold">Jessica Williams</p>
-                            <p class="text-gray-600">CEO, LuxuryBrands</p>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Marketing Director</p>
                         </div>
                     </div>
+                    <p class="text-gray-600 italic relative testimonial-quote pl-4">
+                        Professional, reliable, and incredibly skilled. Handles both development and admin work with equal expertise.
+                    </p>
                 </div>
                 
-                <div class="testimonial-card p-8 rounded-2xl">
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-quote-right text-3xl"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">"Their strategic approach transformed our online presence. We're now industry leaders thanks to their expertise."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-green-500 mr-4"></div>
+                <div class="card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 mr-4"></div>
                         <div>
-                            <p class="font-bold">David Rodriguez</p>
-                            <p class="text-gray-600">Director, HealthPlus</p>
+                            <h4 class="font-bold">David Park</h4>
+                            <p class="text-gray-500 text-sm">Small Business Owner</p>
                         </div>
                     </div>
+                    <p class="text-gray-600 italic relative testimonial-quote pl-4">
+                        The website revamp exceeded expectations, and ongoing support has been invaluable for our growing business.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="gradient-bg rounded-3xl p-12 text-center text-white">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
-                <p class="text-xl mb-8 max-w-2xl mx-auto">Join hundreds of successful companies already growing with ElevateCo</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover-lift">
-                        Start Your Project Today
-                    </a>
-                    <a href="#" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition">
-                        View Pricing Plans
-                    </a>
+    <!-- CTA -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="max-w-3xl mx-auto">
+                <div class="card p-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Let's Work <span class="gradient-text">Together</span>
+                    </h2>
+                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Have a project in mind? Need technical support? Looking for admin assistance? Let's discuss how I can help.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Schedule a Call</h4>
+                            <p class="text-gray-600 text-sm">
+                                30-minute free consultation to discuss your needs
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Email Response</h4>
+                            <p class="text-gray-600 text-sm">
+                                Detailed proposal within 24 hours of your inquiry
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="max-w-md mx-auto">
+                        <form id="contact-form" class="space-y-4">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <input type="text" placeholder="Your Name" class="flex-1 p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                                <input type="email" placeholder="Email Address" class="flex-1 p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <select class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                                <option value="">Select Service Needed</option>
+                                <option value="development">Web Development</option>
+                                <option value="support">Technical Support</option>
+                                <option value="admin">Administrative Work</option>
+                                <option value="multiple">Multiple Services</option>
+                            </select>
+                            <textarea placeholder="Tell me about your project or needs..." rows="4" class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                            <button type="submit" class="btn btn-primary w-full">
+                                Send Message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <p class="mt-8 text-purple-200">No risk, 30-day money-back guarantee</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
                 <div>
-                    <div class="flex items-center mb-6">
-                        <div class="gradient-bg w-10 h-10 rounded-lg flex items-center justify-center mr-3">
-                            <span class="text-white font-bold text-xl">E</span>
-                        </div>
-                        <span class="text-2xl font-bold">Elevate<span class="text-purple-400">Co</span></span>
+                    <div class="text-xl font-bold mb-6">
+                        <span class="text-white">Alex</span><span class="text-blue-400">Morgan</span>
                     </div>
-                    <p class="text-gray-400 mb-6">Transforming businesses with cutting-edge digital solutions since 2015.</p>
+                    <p class="text-gray-400 mb-6">
+                        Freelance developer, tech support specialist, and operations expert.
+                    </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700">
+                            <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-bold mb-6">Services</h3>
+                    <h4 class="font-bold mb-6">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Web Design & Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Digital Marketing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Business Automation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Brand Strategy</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Web Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Technical Support</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Administrative Work</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white">Consultation</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-bold mb-6">Company</h3>
+                    <h4 class="font-bold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white">Process</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white">Projects</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-bold mb-6">Contact</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-3"></i>
-                            hello@elevateco.com
+                    <h4 class="font-bold mb-6">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                            hello@alexmorgan.dev
                         </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-phone mr-3"></i>
-                            +1 (555) 123-4567
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+                            Available Worldwide
                         </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-map-marker-alt mr-3"></i>
-                            New York, NY
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-blue-400"></i>
+                            Mon-Fri, 9am-6pm EST
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 ElevateCo. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a></p>
+            <div class="border-t border-gray-800 mt-10 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Alex Morgan. All rights reserved.</p>
+                <p class="mt-2 text-sm">Built with precision and care for every client.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Chat Button -->
-    <button id="chat-btn" class="fixed bottom-6 right-6 gradient-bg text-white w-16 h-16 rounded-full shadow-2xl hover-lift">
-        <i class="fas fa-comment-alt text-2xl"></i>
-    </button>
+    <!-- Floating Action Button -->
+    <a href="#contact" class="fixed bottom-6 right-6 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition-all hover:scale-110">
+        <i class="fas fa-comment-alt"></i>
+    </a>
 
     <!-- JavaScript -->
     <script>
@@ -502,55 +721,78 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Smooth Scrolling
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('menu-btn');
+            if (!menu.contains(event.target) && !btn.contains(event.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
         });
 
-        // Chat Button
-        document.getElementById('chat-btn').addEventListener('click', function() {
-            alert("👋 Hi there! Let's chat about your project. We'll get back to you within 15 minutes!");
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if (name && email) {
+                // Show success message
+                alert(`Thanks ${name}! I've received your message and will get back to you at ${email} within 24 hours.`);
+                
+                // Reset form
+                this.reset();
+                
+                // Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                alert('Please fill in your name and email address.');
+            }
         });
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fadeIn');
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
                 }
             });
-        }, observerOptions);
-
-        // Observe all service cards
-        document.querySelectorAll('.hover-lift').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Form submission demo
-        document.querySelectorAll('a[href="#contact"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.getAttribute('href') === '#contact') {
-                    e.preventDefault();
-                    const name = prompt("What's your name?");
-                    if (name) {
-                        const email = prompt("What's your email address?");
-                        if (email) {
-                            alert(`Thank you ${name}! We'll contact you at ${email} within 24 hours to schedule your free strategy session.`);
-                        }
-                    }
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-blue-600');
                 }
             });
         });
